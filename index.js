@@ -14,6 +14,8 @@ var routes = require('./routes/index.js');
 var users = require('./routes/users.js');
 var partidas = require('./routes/partida.js');
 
+var auth=require('./auth');
+
 var app = express();
 
 //knex logger
@@ -23,6 +25,7 @@ app.set('view engine', 'handlebars');
 //add bodyParser for use of GET & POST
 var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({extended : true}));
+
 
 //archivos estáticos
 app.use(express.static(path.join(__dirname,'/public')));
@@ -34,7 +37,7 @@ app.use(methodOverride('_method'));
 app.use('/',routes);
 app.use('/user',users);
 app.use('/partida',partidas);
-
+app.use('/auth', auth);
 //505 error page
 app.get('/error', function(req, res){
   res.status(500).render('error');

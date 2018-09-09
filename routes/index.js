@@ -16,13 +16,14 @@ router.get('/about', function(req, res){
   res.render('about', { fortune: fortune.getFortune() });
 });
 
-
+router.get('/formulariouser', (req, res) => res.render('formulariouser') );
 //++++++++++++++++++FORMS ++++++++++++++++++++
 
 // route login form
 router.get('/login', function(req, res){
   res.render('login', { csrf: 'ABCD token' });
 });
+
 
 // get data from form in order to save on database
 router.post('/process', function(req, res){
