@@ -2,7 +2,7 @@ const express = require('express');
 const path = require('path');
 const PORT = process.env.PORT || 5000 ;
 var methodOverride = require('method-override');
-
+app.use(express.static('public'));
 
 var env = process.env.NODE_ENV || 'development';
 

@@ -5,7 +5,7 @@
 -- Dumped from database version 9.6.8
 -- Dumped by pg_dump version 9.6.8
 
--- Started on 2018-09-07 22:41:41 -05
+-- Started on 2018-09-09 18:32:46 -05
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -26,7 +26,7 @@ CREATE EXTENSION IF NOT EXISTS plpgsql WITH SCHEMA pg_catalog;
 
 
 --
--- TOC entry 2270 (class 0 OID 0)
+-- TOC entry 2239 (class 0 OID 0)
 -- Dependencies: 1
 -- Name: EXTENSION plpgsql; Type: COMMENT; Schema: -; Owner: 
 --
@@ -54,7 +54,7 @@ CREATE TABLE public."Administrador" (
 ALTER TABLE public."Administrador" OWNER TO postgres;
 
 --
--- TOC entry 192 (class 1259 OID 58465)
+-- TOC entry 188 (class 1259 OID 58465)
 -- Name: Administrador_id_administrador_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -69,8 +69,8 @@ CREATE SEQUENCE public."Administrador_id_administrador_seq"
 ALTER TABLE public."Administrador_id_administrador_seq" OWNER TO postgres;
 
 --
--- TOC entry 2271 (class 0 OID 0)
--- Dependencies: 192
+-- TOC entry 2240 (class 0 OID 0)
+-- Dependencies: 188
 -- Name: Administrador_id_administrador_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
@@ -93,7 +93,7 @@ CREATE TABLE public."Imagenes" (
 ALTER TABLE public."Imagenes" OWNER TO postgres;
 
 --
--- TOC entry 194 (class 1259 OID 58483)
+-- TOC entry 190 (class 1259 OID 58483)
 -- Name: Imagenes_id_imagen_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -108,8 +108,8 @@ CREATE SEQUENCE public."Imagenes_id_imagen_seq"
 ALTER TABLE public."Imagenes_id_imagen_seq" OWNER TO postgres;
 
 --
--- TOC entry 2272 (class 0 OID 0)
--- Dependencies: 194
+-- TOC entry 2241 (class 0 OID 0)
+-- Dependencies: 190
 -- Name: Imagenes_id_imagen_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
@@ -134,7 +134,7 @@ CREATE TABLE public."Partida" (
 ALTER TABLE public."Partida" OWNER TO postgres;
 
 --
--- TOC entry 193 (class 1259 OID 58476)
+-- TOC entry 189 (class 1259 OID 58476)
 -- Name: Partida_id_partida_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -149,8 +149,8 @@ CREATE SEQUENCE public."Partida_id_partida_seq"
 ALTER TABLE public."Partida_id_partida_seq" OWNER TO postgres;
 
 --
--- TOC entry 2273 (class 0 OID 0)
--- Dependencies: 193
+-- TOC entry 2242 (class 0 OID 0)
+-- Dependencies: 189
 -- Name: Partida_id_partida_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
@@ -158,59 +158,7 @@ ALTER SEQUENCE public."Partida_id_partida_seq" OWNED BY public."Partida".id_part
 
 
 --
--- TOC entry 188 (class 1259 OID 58407)
--- Name: Pieza; Type: TABLE; Schema: public; Owner: postgres
---
-
-CREATE TABLE public."Pieza" (
-    id_pieza integer NOT NULL,
-    url character varying(100)
-);
-
-
-ALTER TABLE public."Pieza" OWNER TO postgres;
-
---
--- TOC entry 189 (class 1259 OID 58410)
--- Name: Rompecabeza; Type: TABLE; Schema: public; Owner: postgres
---
-
-CREATE TABLE public."Rompecabeza" (
-    id_rompecabeza integer NOT NULL,
-    pieza_id integer
-);
-
-
-ALTER TABLE public."Rompecabeza" OWNER TO postgres;
-
---
--- TOC entry 190 (class 1259 OID 58413)
--- Name: Sesion; Type: TABLE; Schema: public; Owner: postgres
---
-
-CREATE TABLE public."Sesion" (
-    id_sesion integer NOT NULL,
-    usuarios_id integer
-);
-
-
-ALTER TABLE public."Sesion" OWNER TO postgres;
-
---
--- TOC entry 191 (class 1259 OID 58416)
--- Name: Usuarios; Type: TABLE; Schema: public; Owner: postgres
---
-
-CREATE TABLE public."Usuarios" (
-    id_usuarios integer NOT NULL,
-    usuarios character varying(10)
-);
-
-
-ALTER TABLE public."Usuarios" OWNER TO postgres;
-
---
--- TOC entry 2111 (class 2604 OID 58467)
+-- TOC entry 2095 (class 2604 OID 58467)
 -- Name: Administrador id_administrador; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -218,7 +166,7 @@ ALTER TABLE ONLY public."Administrador" ALTER COLUMN id_administrador SET DEFAUL
 
 
 --
--- TOC entry 2112 (class 2604 OID 58485)
+-- TOC entry 2096 (class 2604 OID 58485)
 -- Name: Imagenes id_imagen; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -226,7 +174,7 @@ ALTER TABLE ONLY public."Imagenes" ALTER COLUMN id_imagen SET DEFAULT nextval('p
 
 
 --
--- TOC entry 2113 (class 2604 OID 58478)
+-- TOC entry 2097 (class 2604 OID 58478)
 -- Name: Partida id_partida; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -234,7 +182,7 @@ ALTER TABLE ONLY public."Partida" ALTER COLUMN id_partida SET DEFAULT nextval('p
 
 
 --
--- TOC entry 2253 (class 0 OID 58392)
+-- TOC entry 2226 (class 0 OID 58392)
 -- Dependencies: 185
 -- Data for Name: Administrador; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -244,20 +192,22 @@ prueba	as	admin	1
 fradae	da	visitante	2
 gloria	sdas	administrador	3
 jango	12	admn	6
+aad	{"s","s"}	\N	7
+aadfedfed	dwe	\N	8
 \.
 
 
 --
--- TOC entry 2274 (class 0 OID 0)
--- Dependencies: 192
+-- TOC entry 2243 (class 0 OID 0)
+-- Dependencies: 188
 -- Name: Administrador_id_administrador_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public."Administrador_id_administrador_seq"', 6, true);
+SELECT pg_catalog.setval('public."Administrador_id_administrador_seq"', 10, true);
 
 
 --
--- TOC entry 2254 (class 0 OID 58398)
+-- TOC entry 2227 (class 0 OID 58398)
 -- Dependencies: 186
 -- Data for Name: Imagenes; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -267,8 +217,8 @@ COPY public."Imagenes" (imagen, descripcion, id_partida, id_imagen) FROM stdin;
 
 
 --
--- TOC entry 2275 (class 0 OID 0)
--- Dependencies: 194
+-- TOC entry 2244 (class 0 OID 0)
+-- Dependencies: 190
 -- Name: Imagenes_id_imagen_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
@@ -276,7 +226,7 @@ SELECT pg_catalog.setval('public."Imagenes_id_imagen_seq"', 1, false);
 
 
 --
--- TOC entry 2255 (class 0 OID 58404)
+-- TOC entry 2228 (class 0 OID 58404)
 -- Dependencies: 187
 -- Data for Name: Partida; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -288,8 +238,8 @@ COPY public."Partida" (puntaje, piezas, intentos, usuarios_id, rompecabeza_id, i
 
 
 --
--- TOC entry 2276 (class 0 OID 0)
--- Dependencies: 193
+-- TOC entry 2245 (class 0 OID 0)
+-- Dependencies: 189
 -- Name: Partida_id_partida_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
@@ -297,51 +247,7 @@ SELECT pg_catalog.setval('public."Partida_id_partida_seq"', 2, true);
 
 
 --
--- TOC entry 2256 (class 0 OID 58407)
--- Dependencies: 188
--- Data for Name: Pieza; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-COPY public."Pieza" (id_pieza, url) FROM stdin;
-1	www.google.com
-\.
-
-
---
--- TOC entry 2257 (class 0 OID 58410)
--- Dependencies: 189
--- Data for Name: Rompecabeza; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-COPY public."Rompecabeza" (id_rompecabeza, pieza_id) FROM stdin;
-1	1
-\.
-
-
---
--- TOC entry 2258 (class 0 OID 58413)
--- Dependencies: 190
--- Data for Name: Sesion; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-COPY public."Sesion" (id_sesion, usuarios_id) FROM stdin;
-1	1
-\.
-
-
---
--- TOC entry 2259 (class 0 OID 58416)
--- Dependencies: 191
--- Data for Name: Usuarios; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-COPY public."Usuarios" (id_usuarios, usuarios) FROM stdin;
-1	hola
-\.
-
-
---
--- TOC entry 2115 (class 2606 OID 58475)
+-- TOC entry 2099 (class 2606 OID 58475)
 -- Name: Administrador id_administrador; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -350,7 +256,7 @@ ALTER TABLE ONLY public."Administrador"
 
 
 --
--- TOC entry 2118 (class 2606 OID 58495)
+-- TOC entry 2102 (class 2606 OID 58495)
 -- Name: Imagenes id_imag; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -359,7 +265,7 @@ ALTER TABLE ONLY public."Imagenes"
 
 
 --
--- TOC entry 2122 (class 2606 OID 58493)
+-- TOC entry 2106 (class 2606 OID 58493)
 -- Name: Partida id_partida; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -368,43 +274,7 @@ ALTER TABLE ONLY public."Partida"
 
 
 --
--- TOC entry 2124 (class 2606 OID 58426)
--- Name: Pieza id_pieza; Type: CONSTRAINT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY public."Pieza"
-    ADD CONSTRAINT id_pieza PRIMARY KEY (id_pieza);
-
-
---
--- TOC entry 2127 (class 2606 OID 58428)
--- Name: Rompecabeza id_rompecabeza; Type: CONSTRAINT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY public."Rompecabeza"
-    ADD CONSTRAINT id_rompecabeza PRIMARY KEY (id_rompecabeza);
-
-
---
--- TOC entry 2129 (class 2606 OID 58430)
--- Name: Sesion id_sesion; Type: CONSTRAINT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY public."Sesion"
-    ADD CONSTRAINT id_sesion PRIMARY KEY (id_sesion);
-
-
---
--- TOC entry 2131 (class 2606 OID 58432)
--- Name: Usuarios id_usuarios; Type: CONSTRAINT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY public."Usuarios"
-    ADD CONSTRAINT id_usuarios PRIMARY KEY (id_usuarios);
-
-
---
--- TOC entry 2116 (class 1259 OID 58501)
+-- TOC entry 2100 (class 1259 OID 58501)
 -- Name: fki_id_par; Type: INDEX; Schema: public; Owner: postgres
 --
 
@@ -412,7 +282,7 @@ CREATE INDEX fki_id_par ON public."Imagenes" USING btree (id_partida);
 
 
 --
--- TOC entry 2119 (class 1259 OID 58433)
+-- TOC entry 2103 (class 1259 OID 58433)
 -- Name: fki_partida; Type: INDEX; Schema: public; Owner: postgres
 --
 
@@ -420,15 +290,7 @@ CREATE INDEX fki_partida ON public."Partida" USING btree (rompecabeza_id);
 
 
 --
--- TOC entry 2125 (class 1259 OID 58434)
--- Name: fki_pieza; Type: INDEX; Schema: public; Owner: postgres
---
-
-CREATE INDEX fki_pieza ON public."Rompecabeza" USING btree (pieza_id);
-
-
---
--- TOC entry 2120 (class 1259 OID 58507)
+-- TOC entry 2104 (class 1259 OID 58507)
 -- Name: fki_usuario; Type: INDEX; Schema: public; Owner: postgres
 --
 
@@ -436,25 +298,7 @@ CREATE INDEX fki_usuario ON public."Partida" USING btree (usuarios_id);
 
 
 --
--- TOC entry 2134 (class 2606 OID 58440)
--- Name: Rompecabeza fk_rompecabeza; Type: FK CONSTRAINT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY public."Rompecabeza"
-    ADD CONSTRAINT fk_rompecabeza FOREIGN KEY (pieza_id) REFERENCES public."Pieza"(id_pieza);
-
-
---
--- TOC entry 2135 (class 2606 OID 58450)
--- Name: Usuarios fk_usuario; Type: FK CONSTRAINT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY public."Usuarios"
-    ADD CONSTRAINT fk_usuario FOREIGN KEY (id_usuarios) REFERENCES public."Sesion"(id_sesion);
-
-
---
--- TOC entry 2132 (class 2606 OID 58496)
+-- TOC entry 2107 (class 2606 OID 58496)
 -- Name: Imagenes id_par; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -463,7 +307,7 @@ ALTER TABLE ONLY public."Imagenes"
 
 
 --
--- TOC entry 2133 (class 2606 OID 58502)
+-- TOC entry 2108 (class 2606 OID 58502)
 -- Name: Partida usuario; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -471,7 +315,7 @@ ALTER TABLE ONLY public."Partida"
     ADD CONSTRAINT usuario FOREIGN KEY (usuarios_id) REFERENCES public."Administrador"(id_administrador);
 
 
--- Completed on 2018-09-07 22:41:42 -05
+-- Completed on 2018-09-09 18:32:47 -05
 
 --
 -- PostgreSQL database dump complete

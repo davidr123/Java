@@ -6,7 +6,7 @@ var router = express.Router();
 router.get('/',(req, res)=>{
     
     res.json({
-        message:'desactivado'
+        message:'dsjkhfsdj'
     });
     
 });
