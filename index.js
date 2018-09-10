@@ -13,7 +13,8 @@ var exphbs  = require('express-handlebars');
 var routes = require('./routes/index.js');
 var users = require('./routes/users.js');
 var partidas = require('./routes/partida.js');
-
+var front = require('./routes/front.js');
+var images = require('./routes/images.js');
 var auth=require('./auth');
 
 var app = express();
@@ -37,7 +38,15 @@ app.use(methodOverride('_method'));
 app.use('/',routes);
 app.use('/user',users);
 app.use('/partida',partidas);
+app.use('/images',images);
 app.use('/auth', auth);
+app.use('/front', front);
+
+
+// indicamos que del fichero upload.js haga mención a la función upload, para cargar el formulario html
+//app.get('/images',images); 
+// indicamos que del fichero upload.js haga mención a la función Uploads para subir la imagen.
+//app.post('/images', images);
 //505 error page
 app.get('/error', function(req, res){
   res.status(500).render('error');
