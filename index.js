@@ -15,6 +15,7 @@ var users = require('./routes/users.js');
 var partidas = require('./routes/partida.js');
 var front = require('./routes/front.js');
 
+
 var images = require('./routes/images.js');
 
 var auth=require('./auth');
@@ -43,6 +44,7 @@ app.use('/partida',partidas);
 app.use('/images',images);
 app.use('/auth', auth);
 app.use('/front', front);
+
 
 
 // indicamos que del fichero upload.js haga mención a la función upload, para cargar el formulario html

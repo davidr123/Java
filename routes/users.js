@@ -59,13 +59,22 @@ router.post('/auth', (req, res) => {
         
       res.render('user/prueba', {user: user});
     } else {
-      console.log("Vale Verga Frada"); 
+      console.log("authenticado"); 
     }
   })
   .catch(function(error) {
     console.log(error);
 });
 });
+
+
+
+//logout
+router.get('/cerrar', (req, res) => {  
+    console.log("dsfn");
+  res.render('user/logout');
+});
+
 
 //routing read database postgrsql
 router.get('/', (req, res) => {
