@@ -14,7 +14,11 @@ var routes = require('./routes/index.js');
 var users = require('./routes/users.js');
 var partidas = require('./routes/partida.js');
 var front = require('./routes/front.js');
+<<<<<<< HEAD
 
+=======
+var images = require('./routes/images.js');
+>>>>>>> d43e3aac5a5b9c290277b823e08bb6340eafa210
 var auth=require('./auth');
 
 var app = express();
@@ -38,8 +42,18 @@ app.use(methodOverride('_method'));
 app.use('/',routes);
 app.use('/user',users);
 app.use('/partida',partidas);
+app.use('/images',images);
 app.use('/auth', auth);
 app.use('/front', front);
+<<<<<<< HEAD
+=======
+
+
+// indicamos que del fichero upload.js haga mención a la función upload, para cargar el formulario html
+//app.get('/images',images); 
+// indicamos que del fichero upload.js haga mención a la función Uploads para subir la imagen.
+//app.post('/images', images);
+>>>>>>> d43e3aac5a5b9c290277b823e08bb6340eafa210
 //505 error page
 app.get('/error', function(req, res){
   res.status(500).render('error');
