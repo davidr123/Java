@@ -10,15 +10,27 @@ router.get('/', (req, res) => {
          console.log("get");
 res.render('imagen/upload',{ title: 'ejemplo de subida de imagen por HispaBigData' });
 });
-var fs = require('fs');
 
 router.post('/new', (req, res) => {  
-let EDFile = req.files.file
-    EDFile.mv(`./files/${EDFile.name}`,err => {
-        if(err) return res.status(500).send({ message : err })
-     })
+    console.log(req.body.url);
+  knex('Imagenes')
+     .returning('id_imagen')
+      .insert({imagen : "prueba1",
+       descripcion: req.body.url,
+      id_partida : '1'  })
+      .then(ids =>  {
+        const id = ids[0];
+        res.redirect(`/imagen/${id}`);
+      });
+    
 });
 
+
+router.get('/:id_administrador', (req, res) => {
+  const id = req.params.id_administrador;
+  respondAndRenderUser(id,res,'imagen/single');
+  
+});
 // Importamos el modulo para subir ficheros
 
 

@@ -1,14 +1,8 @@
-
-
-<form method="post" enctype="multipart/form-data" action="/images/new">
-
-<input class="form-control" type="file" name="file" required>
-<button>Subir</button>
-</form>
+ <script src="/Js/jquery-3.3.1.min.js"> </script>
 
 <h2><a href="/user">Imagenes</a></h2>
 
-<form class="form" action="/user" method="post">
+<form class="form" action="/images/new" method="post">
   <div class="form-group">
     <label for="title"></label>
       
@@ -20,8 +14,8 @@
     
 <input type="file" class="form-control" required id="url" >
           
-          <input type="text" class="form-control" required name="url" id="urlimage">
-          
+          <input type="text"  name="url" style="visibility:hidden" id="urlimage">
+         
        
           
       </div>
@@ -40,8 +34,10 @@
 
   <script>
 try{
-        document.addEventListener('DOMContentLoaded',function(){
-        document.querySelector('#url').onchange=evento;
+    
+      
+    document.addEventListener('DOMContentLoaded',function(){
+    document.querySelector('#url').onchange=evento;
       },false);
       
       function evento(event){
@@ -49,13 +45,13 @@ try{
       }
       
       function readURL(input, id) {
-        console.log("Hola");
+
           if (input.files && input.files[0]) {
               var reader = new FileReader();
-
+                console.log("Hola");
               reader.onload = function (e) {
                   console.log(e.target.result);
-
+                  
                   $('#'+id).attr('value', e.target.result);
               }
 
@@ -66,7 +62,4 @@ try{
 
     }
 </script>
-=======
-  
->>>>>>> 12d7eabbe011647b7e0afcdd8b235b7ec925cd21
->>>>>>> 73c2148ee307b2a84a35dd66d2d734ddf43b6c10
+

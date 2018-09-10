@@ -68,11 +68,6 @@ app.use(function(err, req, res, next){
 app.use(function(req, res){
   res.status(404).render('not-found');
 });
-app.use(express.urlencoded());
-app.use(express.json());
-
-app.use(express.methodOverride());
-app.use(express.multipart());
 
 app.listen(PORT, () => console.log(`Listening on ${ PORT }`));
 
