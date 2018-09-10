@@ -192,6 +192,8 @@ router.delete('/:id_administrador',(req,res)=>{
 });
 
 
+
+
 /*
 router.post('/login/:usuario:password', (req, res) => {
     const usu=req.params.usuario;

@@ -26,6 +26,8 @@ router.get('/login', function(req, res){
 });
 
 
+//router.get('/indexfront, (req, res) => res.render('indexfront') );
+
 // get data from form in order to save on database
 router.post('/process', function(req, res){
   console.log('Form (from querystring): ' + req.query.form);

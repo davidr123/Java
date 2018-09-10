@@ -2,7 +2,7 @@ const express = require('express');
 const path = require('path');
 const PORT = process.env.PORT || 5000 ;
 var methodOverride = require('method-override');
-app.use(express.static('public'));
+//app.use(express.static('public'));
 
 var env = process.env.NODE_ENV || 'development';
 
@@ -13,6 +13,7 @@ var exphbs  = require('express-handlebars');
 var routes = require('./routes/index.js');
 var users = require('./routes/users.js');
 var partidas = require('./routes/partida.js');
+var front = require('./routes/front.js');
 
 var auth=require('./auth');
 
@@ -38,6 +39,7 @@ app.use('/',routes);
 app.use('/user',users);
 app.use('/partida',partidas);
 app.use('/auth', auth);
+app.use('/front', front);
 //505 error page
 app.get('/error', function(req, res){
   res.status(500).render('error');
