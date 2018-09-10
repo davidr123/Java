@@ -1,5 +1,21 @@
 <h2>Sign up</h2>
 
+<script >
+       
+        var usuario = localStorage.getItem("usuario");
+        
+        if(usuario!=null || usuario!=undefined){
+             console.log(usuario);
+              window.location="/"
+             //window.location="/user/login"
+        }
+        
+      
+    
+
+
+</script>
+
 <form class="form-horizontal" role="form" action="/user/auth" method="POST">
   
   
@@ -26,3 +42,6 @@
 </div>
   
 </form>
+<script >
+  
+</script>
