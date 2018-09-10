@@ -10,7 +10,12 @@
    
       <div class ="form-group" id="foto">
     
-      
+<input type="file" class="form-control" required id="url" >
+          
+          <input type="text" class="form-control" required name="url" id="urlimage">
+          
+       
+          
       </div>
     
     </div>
@@ -23,4 +28,32 @@
     <div class="row">
         <a href="/user" type="button">Atrás</a>
     </div>
-  
+
+  <script>
+try{
+        document.addEventListener('DOMContentLoaded',function(){
+        document.querySelector('#url').onchange=evento;
+      },false);
+      
+      function evento(event){
+        readURL(this, "urlimage");
+      }
+      
+      function readURL(input, id) {
+        console.log("Hola");
+          if (input.files && input.files[0]) {
+              var reader = new FileReader();
+
+              reader.onload = function (e) {
+                  console.log(e.target.result);
+
+                  $('#'+id).attr('value', e.target.result);
+              }
+
+              reader.readAsDataURL(input.files[0]);
+          }
+      }
+    }catch(err){
+
+    }
+</script>
