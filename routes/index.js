@@ -4,6 +4,7 @@ var router = express.Router();
 var fortune = require('../lib/fortune.js');
 
 
+
 router.get('/', function (req, res) {
     res.render('index', {title: "Index Home"});
 });

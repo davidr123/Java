@@ -8,7 +8,7 @@ var router = express.Router();
 const knex = require('../db/knex');
 //Login
 
-
+//funcion que ejecuta el request para obtener el usuario ya logeado
 
 
 router.get('/login/:id', (req, res)=>{
@@ -31,9 +31,9 @@ router.get('/login/:id', (req, res)=>{
 
 });
 
-
+//funcion para redireccionar al formulario de logeo
 router.get('/login', (req, res) => {
- 
+         
       res.render('user/login');
    
 });
@@ -192,7 +192,7 @@ router.delete('/:id_administrador',(req,res)=>{
 });
 
 
-
+/*
 router.post('/login/:usuario:password', (req, res) => {
     const usu=req.params.usuario;
      const pass=req.params.password;
@@ -205,5 +205,5 @@ router.post('/login/:usuario:password', (req, res) => {
   });  
 });
 
-
+*/
 module.exports = router;
