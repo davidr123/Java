@@ -7,14 +7,8 @@
               window.location="/user/login"
              //window.location="/user/login"
         }
-        
-      
-    
-
-
 </script>
 <h2>Editar - <a href="/user"> Administrador </a></h2>
-
 
 <!-- NOTA: utilice helper para simplificar el código de esta sección 
 agregar method-override 
@@ -23,21 +17,18 @@ agregar method-override
 <form class="form" action="/user/{{user.id_administrador}}?_method=PUT" method="post">
   <div class="form-group">
     <label for="title"></label>
-    <input type="text" class="form-control" id="usuario" name="usuario"  value="{{user.usuario}}"> 
-      <input type="text" class="form-control" id="password" name="password"  value="{{user.password}}">
+    <label>Usuario: </label><input type="text" class="form-control" id="usuario" name="usuario"  value="{{user.usuario}}"> 
+      <label>Contraseña: </label> <input type="text" class="form-control" id="password" name="password"  value="{{user.password}}">
      
-         <select select class="form-control" id="rol"  value="{{user.rol}}" name="rol" type="text">
+        <label>Rol: </label> <select select class="form-control" id="rol"  value="{{user.rol}}" name="rol" type="text">
       <option>Visitante</option>
           <option>Administrador</option>
       
       </select>
   </div>
-  <button type="submit" class="btn btn-default btn-danger">Actualizar</button>
+  <button type="submit" class="btn btn-default btn-success">Actualizar</button>
+    <a href="/user" type="button" class="btn btn-default btn-warning">Atrás</a>
 </form>
 
-<br><br>
+<br><br><br>
     <div class="row pt-md-5"></div>
-    <div class="row">
-        <a href="/user" type="button" style="color:white;">Atrás</a>
-    </div>
-<br><br>
