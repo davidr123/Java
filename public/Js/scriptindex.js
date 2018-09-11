@@ -10,28 +10,8 @@ function updateImg(num){
        $('.hi').add("<h3> hi </h3>").appendTo(document.body);
    }
 }*/
-
-window.addEventListener('load', () => {
-				// noinspection JSUnresolvedVariable
-				let audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-				let xhr = new XMLHttpRequest();
-				xhr.open('GET', '/audio/background.mp3');
-				xhr.addEventListener('load', () => {
-					let playsound = (audioBuffer) => {
-						let source = audioCtx.createBufferSource();
-						source.buffer = audioBuffer;
-						source.connect(audioCtx.destination);
-						source.start();
-
-						setTimeout(function () {
-							playsound(audioBuffer);
-						}, 1000);
-					};
-
-					audioCtx.decodeAudioData(xhr.response).then(playsound);
-				});
-				xhr.send();
-			});
+var aud = document.getElementById("myAudio");
+aud.volume = 0.5; // default 1 means 100%
 
 
 $("input").change(function(e) {
