@@ -18,7 +18,8 @@
 </div>
 
 <div class="row">
-<a href="/images/new" type="button" class="btn btn-default btn-warning">Nuevo</a>
+<a href="/images/new" type="button" class="btn btn-default btn-success">Nuevo</a>
+    <a href="/about" type="button" class="btn btn-default btn-warning">Atrás</a>
 </div>
 <div class="row pt-md-5"></div>
 
@@ -26,14 +27,14 @@
   <div class="row">
       <br> <br>
     <div class="col-4 col-sm-3">
-        <p href='/images/{{id_imagen}}'> id: {{id_imagen}} <br> descripcion: {{descripcion}} <br>imagen: {{imagen}} <br>id_partida: {{id_partida}} </p>
+        <p href='/images/{{id_imagen}}'> ID: {{id_imagen}} <br> DESCRIPCIÓN: {{descripcion}} <br>IMAGEN: {{imagen}} <br> ID PARTIDA: {{id_partida}} </p>
     </div>
     <div class="col-4 col-sm-1">
-        <a type="button" class="btn btn-default btn-danger" href='/images/{{id_imagen}}/edit'>editar</a>
+        <a type="button" class="btn btn-default btn-primary" href='/images/{{id_imagen}}/edit'>Editar</a>
       </div>
     <div class="col-4 col-sm-1">
       <form action='/images/{{id_imagen}}?_method=DELETE' method='post'>
-        <button type="submit" class="btn btn-default btn-danger">borrar</button>            
+        <button type="submit" class="btn btn-default btn-danger">Borrar</button>            
       </form>
     </div>
     <div class="col-6 col-sm-9"></div>
@@ -41,7 +42,3 @@
 {{/each}}
 <br><br>
     <div class="row pt-md-5"></div>
-    <div class="row">
-        <a href="/about" type="button" style="color:white;">Atrás</a>
-    </div>
-  <br><br>
