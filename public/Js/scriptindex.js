@@ -16,18 +16,16 @@ window.addEventListener('load', () => {
 				let audioCtx = new (window.AudioContext || window.webkitAudioContext)();
 				let xhr = new XMLHttpRequest();
 				xhr.open('GET', '/audio/background.mp3');
-				xhr.responseType = 'arraybuffer';
 				xhr.addEventListener('load', () => {
 					let playsound = (audioBuffer) => {
 						let source = audioCtx.createBufferSource();
 						source.buffer = audioBuffer;
 						source.connect(audioCtx.destination);
-						source.loop = false;
 						source.start();
 
 						setTimeout(function () {
 							playsound(audioBuffer);
-						}, 2000);
+						}, 1000);
 					};
 
 					audioCtx.decodeAudioData(xhr.response).then(playsound);
