@@ -7,56 +7,33 @@
               window.location="/user/login"
              //window.location="/user/login"
         }
-        
-      
-    
-
-
 </script>
  <script src="/Js/jquery-3.3.1.min.js"> </script>
 
-<h2><a href="/images">Imagenes</a></h2>
-
-
-
-
-
+<h2><a href="/images">Imágenes</a></h2>
 
 <form class="form" action="/images/{{imagen.id_imagen}}" method="post">
   <div class="form-group">
     <label for="title"></label>
-      
-
       <div>
       <label>Subir Imagen</label>
       </div>
    
-      <div class ="form-group" id="foto">
-    
-<input type="file" class="form-control" required id="url" >
-          
-          <input type="text"  name="url" style="visibility:hidden" id="urlimage">
-   
-       
-          
+      <div class ="form-group" id="foto"> 
+          <input type="file" class="form-control" required id="url" >
+          <input type="text"  name="url" style="visibility:hidden" id="urlimage">  
       </div>
     
     </div>
-  <button type="submit" class="btn btn-default success">ImagenUser</button>
-    
-    
+  <button type="submit" class="btn btn-primary">Cargar</button>
+    <a href="/images" type="button"class="btn btn-danger">Atrás</a>
 </form>
 <br><br><br>
     <div class="row pt-md-5"></div>
-    <div class="row">
-        <a href="/images" type="button" style="color:white;">Atrás</a>
-    </div>
 
 
   <script>
-try{
-    
-      
+try{ 
     document.addEventListener('DOMContentLoaded',function(){
     document.querySelector('#url').onchange=evento;
       },false);
