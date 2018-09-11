@@ -14,6 +14,11 @@ router.get('/avatar', (req, res) => {
    
 });
 
+router.get('/avatarEscogido', (req, res) => {
+       
+      res.render('front/avatarEscogido');
+   
+});
 
 router.get('/juegos', (req, res) => {
        knex('Imagenes')
@@ -72,6 +77,19 @@ router.get('/puzzle3', (req, res) => {
 router.get('/login', (req, res) => {
        
       res.render('user/login');
+   
+});
+
+
+router.get('/administradorP', (req, res) => {
+       
+      res.render('front/administradorP');
+   
+});
+
+router.get('/admin', (req, res) => {
+       
+      res.render('front/admin');
    
 });
 
