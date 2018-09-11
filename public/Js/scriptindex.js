@@ -27,7 +27,7 @@ window.addEventListener('load', () => {
 
 						setTimeout(function () {
 							playsound(audioBuffer);
-						}, 1000 + Math.random()*2500);
+						}, 2000);
 					};
 
 					audioCtx.decodeAudioData(xhr.response).then(playsound);
