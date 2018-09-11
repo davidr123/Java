@@ -17,6 +17,7 @@ router.get('/', (req, res) => {
 
 //routing new + form+ get
 router.get('/new', (req, res) => {
+    console.log("jdf");
   res.render('images/new', { title: "Form Users" });
 });
 

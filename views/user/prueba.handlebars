@@ -5,7 +5,8 @@
 
 
 var xhr = new XMLHttpRequest();
-xhr.open('GET', "http://localhost:5000/user/login/{{user}}", true);
+    let host = window.origin;
+xhr.open('GET', host+"/user/login/{{user}}", true);
 xhr.send();
  
 xhr.onreadystatechange = processRequest;
