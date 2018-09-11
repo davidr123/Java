@@ -15,7 +15,7 @@ window.addEventListener('load', () => {
 				// noinspection JSUnresolvedVariable
 				let audioCtx = new (window.AudioContext || window.webkitAudioContext)();
 				let xhr = new XMLHttpRequest();
-				xhr.open('GET', '/audios/background.mp3');
+				xhr.open('GET', '/audio/background.mp3');
 				xhr.responseType = 'arraybuffer';
 				xhr.addEventListener('load', () => {
 					let playsound = (audioBuffer) => {
