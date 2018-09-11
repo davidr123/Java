@@ -51,6 +51,35 @@ function respondAndRenderUser(id,res,viewName){
   }  
 }
 
+//puntos
+
+  router.get('/puntos/:id', function(req, res){
+
+    const id = req.params.id;
+
+    knex('Partida')
+     .where('id_partida', id)
+     .first()
+     .then( partida => {
+      res.json({user: partida});
+    });
+    
+  });
+
+
+ router.post('/puntos/:id', function(req, res){
+     console.log("Entro al post");
+    const id = req.params.id;
+
+    knex('Partida')
+    .increment('puntaje', 1)
+     .where('id_partida', id)
+     .then( partida => {
+      res.json({user: partida});
+    });
+    
+  });
+
 router.get('/puzzle/:id_imagen', (req, res) => {
       const id = req.params.id_imagen;
     console.log("get"+ id);
