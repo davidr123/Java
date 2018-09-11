@@ -10,40 +10,29 @@
         
       
     
-handleSubmitImages(){
-  // el loop lo haces aqui.
-  this.state.images.forEach((image) => {
-    let xhr = new XMLHttpRequest()
-    let json = JSON.stringify({image})
-    xhr.open("POST",'new',true)
-    xhr.setRequestHeader("Content-Type","application/json")
-    xhr.send(json)
 
-    // TODO: manejar los errores de transferencia (retry policy/notification)
-  }
-}
 
 </script>
 <div class="row">
-<h1> Tabla Administrador </h1>
+<h1> Tabla Imagenes </h1>
 </div>
 
 <div class="row">
-<a href="/user/new" type="button" class="btn btn-default btn-warning">Nuevo</a>
+<a href="/images/new" type="button" class="btn btn-default btn-warning">Nuevo</a>
 </div>
 <div class="row pt-md-5"></div>
 
-{{#each objUsuarios}}
+{{#each objImagenes}}
   <div class="row">
       <br> <br>
     <div class="col-4 col-sm-3">
-        <p href='/user/{{id_administrador}}'> id: {{id_administrador}} <br> usuario: {{usuario}} <br>password: {{password}} <br>rol: {{rol}} </p>
+        <p href='/images/{{id_imagen}}'> id: {{id_imagen}} <br> descripcion: {{descripcion}} <br>imagen: {{imagen}} <br>id_partida: {{id_partida}} </p>
     </div>
     <div class="col-4 col-sm-1">
-        <a type="button" class="btn btn-default btn-danger" href='/user/{{id_administrador}}/edit'>editar</a>
+        <a type="button" class="btn btn-default btn-danger" href='/images/{{id_imagen}}/edit'>editar</a>
       </div>
     <div class="col-4 col-sm-1">
-      <form action='/user/{{id_administrador}}?_method=DELETE' method='post'>
+      <form action='/images/{{id_imagen}}?_method=DELETE' method='post'>
         <button type="submit" class="btn btn-default btn-danger">borrar</button>            
       </form>
     </div>

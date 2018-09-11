@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-//const knex = require('../db/knex');
+const knex = require('../db/knex');
 
 router.get('/', (req, res) => {
       console.log("hola");   
@@ -16,15 +16,41 @@ router.get('/avatar', (req, res) => {
 
 
 router.get('/juegos', (req, res) => {
-       
-      res.render('front/juegos');
+       knex('Imagenes')
+    .select()
+    .then(imagenes =>{
+      res.render('front/juegos', { title: "Imagenes", objImagenes: imagenes });
+  });  
+      
    
 });
 
+function respondAndRenderUser(id,res,viewName){  
+  if(typeof id != 'undefined'){
+      console.log("respon");
+    knex('Imagenes')
+      .select()
+      .where('id_imagen',id)
+      .first()
+      .then(imagenes => {
+        
+        res.render(viewName,{imagenes: imagenes});
+    });
+  }else{
+    
+    console.log('error invalid id ');   
+    res.status(500);
+    res.render('error', {
+      message: 'Invalid ID user' 
+    });    
+  }  
+}
 
-router.get('/puzzle', (req, res) => {
-       
-      res.render('front/puzzle');
+router.get('/puzzle/:id_imagen', (req, res) => {
+      const id = req.params.id_imagen;
+    console.log("get"+ id);
+  respondAndRenderUser(id,res,'front/puzzle'); 
+      //res.render('front/puzzle');
    
 });
 
@@ -49,6 +75,14 @@ router.get('/login', (req, res) => {
    
 });
 
+
+router.get('/', (req, res) => {
+  knex('Imagenes')
+    .select()
+    .then(imagenes =>{
+      res.render('imagen/uoload', { title: "Imagenes", objImagenes: imagenes });
+  });  
+});
 
 
 

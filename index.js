@@ -28,9 +28,10 @@ app.set('view engine', 'handlebars');
 
 //add bodyParser for use of GET & POST
 var bodyParser = require('body-parser');
-app.use(bodyParser.urlencoded({extended : true}));
+//app.use(bodyParser.urlencoded({extended : true}));
 
-
+app.use(bodyParser.json({limit: '50mb'}));
+app.use(bodyParser.urlencoded({limit: '50mb', extended: true }));
 //archivos estáticos
 app.use(express.static(path.join(__dirname,'/public')));
 

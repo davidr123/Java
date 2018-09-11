@@ -1,11 +1,32 @@
+<script >
+       
+        var usuario = localStorage.getItem("usuario");
+        
+        if(usuario==null || usuario==undefined){
+             console.log(usuario);
+              window.location="/user/login"
+             //window.location="/user/login"
+        }
+        
+      
+    
+
+
+</script>
  <script src="/Js/jquery-3.3.1.min.js"> </script>
 
-<h2><a href="/user">Imagenes</a></h2>
+<h2><a href="/images">Imagenes</a></h2>
 
-<form class="form" action="/images/new" method="post">
+
+
+
+
+
+<form class="form" action="/images/{{imagen.id_imagen}}" method="post">
   <div class="form-group">
     <label for="title"></label>
       
+
       <div>
       <label>Subir Imagen</label>
       </div>
@@ -15,7 +36,7 @@
 <input type="file" class="form-control" required id="url" >
           
           <input type="text"  name="url" style="visibility:hidden" id="urlimage">
-         
+   
        
           
       </div>
@@ -28,7 +49,7 @@
 <br><br><br>
     <div class="row pt-md-5"></div>
     <div class="row">
-        <a href="/user" type="button">Atrás</a>
+        <a href="/images" type="button">Atrás</a>
     </div>
 
 
@@ -62,4 +83,3 @@ try{
 
     }
 </script>
-

@@ -15,17 +15,16 @@
         <div id="title" style="color: violet;">
             Escoge tu personaje favorito
         </div>
+        {{#each objImagenes}}
         <div class="row" style="text-align: center">
             <div class="col-md-12">
-                <a href="/front/puzzle"> <button id="game-button" style="background-color:#e386b3">
-                <img  src="/images/peppa.png">
+                <a href="/front/puzzle/{{id_imagen}}"> <button id="game-button" style="background-color:#e386b3">
+                <img  src="{{descripcion}}">
                 </button> </a>
-                <a href="/front/puzzle2"> <button id="game-button" style="background-color:#bfcb04">
-                <img  src="/images/dora.png"></button> </a>
-                <a href="/front/puzzle3"> <button id="game-button"><img  src="/images/doraemon-icon.png">
-                </button> </a>
+              
             </div>
         </div>
+        {{/each}}
         <br><br><br><br><br><br>
         <div class="row" style="text-align: center;">  
             <div class="col-12">
