@@ -73,10 +73,10 @@ class Espacios {
     }
 }(jQuery);
 
-function start_puzzle(x){
+function start_puzzle(x,y){
     $('#puzzle_solved').hide();
     $('#source_image').snapPuzzle({
-        rows: x, columns: x,
+        rows: y, columns: x,
         pile: '#pile',
         containment: '#puzzle-containment',
         onComplete: function(){
@@ -87,13 +87,39 @@ function start_puzzle(x){
 }
 
 $(function(){
-    var num = 2;
+    var piezas=localStorage.getItem("piezas");
+    //alert(piezas);
+    var x;
+    var y;
+    switch(piezas){
+            case '1':
+                x=2;
+            y=2;
+            localStorage.setItem("numpiezas",4);
+            break;
+            case '2':
+                x=3;
+            y=3;
+            localStorage.setItem("numpiezas",9);
+            break;
+            case '3':
+                x=2;
+            y=3;
+            localStorage.setItem("numpiezas",6);
+            break;
+            case '4':
+                x=2;
+            y=4;
+            localStorage.setItem("numpiezas",8);
+            break;
+                 }
+    
     $('#pile').height($('#source_image').height());
-    start_puzzle(num);
+    start_puzzle(x,y);
 
     $('.restart-puzzle').click(function(){
         $('#source_image').snapPuzzle('destroy');
-        start_puzzle(num);
+        start_puzzle(x,y);
     });
 
     $(window).resize(function(){
