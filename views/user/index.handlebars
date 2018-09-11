@@ -7,48 +7,37 @@
               window.location="/user/login"
              //window.location="/user/login"
         }
-        
-      
-    
-
-
 </script>
+<div id="center-table">
 <div class="row">
 <h1> Tabla Administrador </h1>
 </div>
 
 <div class="row">
-<a href="/user/new" type="button" class="btn btn-default btn-success">Nuevo</a>
-        <a href="/about" type="button" class="btn btn-default btn-primary">Atrás</a>
+<a href="/user/new" type="button" class="btn btn-default btn-sucess">Nuevo</a>
+        <a href="/about" type="button" class="btn btn-default btn-warning">Atrás</a>
      <a href="/user/cerrar" type="button" class="btn btn-default btn-danger">Logout</a>    
 </div>
-
 <div class="row pt-md-5"></div>
 
 {{#each objUsuarios}}
-  <div class="row">
+  <div class="row" >
       <br> <br>
     <div class="col-4 col-sm-3">
         <p href='/user/{{id_administrador}}'> id: {{id_administrador}} <br> usuario: {{usuario}} <br>password: {{password}} <br>rol: {{rol}} </p>
     </div>
     <div class="col-4 col-sm-1">
-        <a type="button" class="btn btn-default btn-danger" href='/user/{{id_administrador}}/edit'>editar</a>
+        <a type="button" class="btn btn-default btn-success" href='/user/{{id_administrador}}/edit'>Editar</a>
       </div>
     <div class="col-4 col-sm-1">
       <form action='/user/{{id_administrador}}?_method=DELETE' method='post'>
-        <button type="submit" class="btn btn-default btn-danger">borrar</button>            
+        <button type="submit" class="btn btn-default btn-danger">Borrar</button>            
       </form>
     </div>
     <div class="col-6 col-sm-9"></div>
   </div>
 {{/each}}
 <br><br>
-      <div class="row pt-md-5"></div>
-    <div class="row">
-        <a href="/about" type="button" style="color:white;">Atrás</a>
-    </div>
-<div class="row pt-md-5"></div>
-    <div class="row">
-        <a href="/user/cerrar" type="button" style="color:white;">Logout</a>
-    </div>
+    <div class="row pt-md-5"></div>
+   </div>
   <br><br>
