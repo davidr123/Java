@@ -2,10 +2,9 @@
 
 body { 
     background-image: url(/images/wallpaper.png);
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
+    background-repeat: no-repeat; !important;
+    background-size: auto; !important; 
+    background-position: center; !important;
 }
 
 #title{
