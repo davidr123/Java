@@ -23,6 +23,15 @@ agregar method-override
 <form class="form" action="/images/{{imagen.id_imagen}}" method="post">
   <div class="form-group">
     <label for="title"></label>
+
+     <img src="{{imagen.image}}" >
+    <input type="text" class="form-control" id="usuario" name="descripcion"  value="{{imagen.descripcion}}"> 
+      <input type="text" class="form-control" id="password" name="id_partida"  value="{{imagen.id_partida}}">
+      <input type="text" class="form-control" id="rol" name="imagen"  value="{{imagen.imagen}}">
+      
+  </div>
+  <button type="submit" class="btn btn-default btn-danger">Actualizar</button>
+
       <div>
       <label>Subir Imagen</label>
       </div>
@@ -31,11 +40,10 @@ agregar method-override
           <input type="file" class="form-control" required id="url" >
           <input type="text"  name="url" style="visibility:hidden" id="urlimage">  
       </div>
-    
-    </div>
+
   <button type="submit" class="btn btn-primary">Cargar</button>
     <a href="/images" type="button"class="btn btn-danger">Atrás</a>
-</form>
+
 
 <br><br><br>
     <div class="row pt-md-5"></div>
