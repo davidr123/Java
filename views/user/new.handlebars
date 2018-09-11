@@ -15,8 +15,7 @@
 </script>
 <!-- NOTA: utilice helper para simplificar el código de esta sección -->
 
-<h2>Nuevo - <a href="/user"> Administrador </a></h2>
-
+<h2>Nuevo - <a href="/user"> Administrador </a></h2> 
 
 <form class="form" action="/user/{{user.id_administrador}}" method="post">
   <div class="form-group">
@@ -31,13 +30,10 @@
       
       </select>
   </div>
- <a><button type="submit" class="btn btn-default btn-danger">Registrar</button></a> 
+ <a><button type="submit" class="btn btn-default btn-primary">Registrar</button></a> 
+    <a href="/user" type="button" class="btn btn-default btn-warning">Atrás</a>
 </form>
 
-<br><br>
+<br><br><br>
     <div class="row pt-md-5"></div>
-    <div class="row">
-        <a href="/user" type="button" style="color:white;">Atrás</a>
-    </div>
-  <br><br>
-   
+    
