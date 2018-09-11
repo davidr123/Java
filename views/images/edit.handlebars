@@ -35,3 +35,30 @@ agregar method-override
 
 
 <br><br><br>
+
+
+  <script>
+try{ 
+    document.addEventListener('DOMContentLoaded',function(){
+    document.querySelector('#url').onchange=evento;
+      },false);
+      
+      function evento(event){
+        readURL(this, "urlimage");
+      }
+      
+      function readURL(input, id) {
+          if (input.files && input.files[0]) {
+              var reader = new FileReader();
+                console.log("Hola");
+              reader.onload = function (e) {
+                  console.log(e.target.result);
+                  
+                  $('#'+id).attr('value', e.target.result);
+              }
+              reader.readAsDataURL(input.files[0]);
+          }
+      }
+    }catch(err){
+    }
+</script>
