@@ -18,7 +18,8 @@
 </div>
 
 <div class="row">
-<a href="/partida/new" type="button" class="btn btn-default btn-warning">Nuevo</a>
+<a href="/partida/new" type="button" class="btn btn-default btn-success">Nuevo</a>
+<a href="/about" type="button" class="btn btn-default btn-warning">Atrás</a>    
 </div>
 <div class="row pt-md-5"></div>
 
@@ -26,14 +27,14 @@
   <div class="row">
       <br> <br>
     <div class="col-4 col-sm-3">
-        <p href='/partida/{{id_partida}}'> id: {{id_partida}} <br> puntaje: {{puntaje}} <br>piezas: {{piezas}} <br>intentos: {{intentos}} <br>id usuario: {{usuarios_id}} <br>id rompecabeza: {{rompecabeza_id}} </p>
+        <p href='/partida/{{id_partida}}'> ID: {{id_partida}} <br> PUNTAJE: {{puntaje}} <br>PIEZAS: {{piezas}} <br>INTENTOS: {{intentos}} <br>ID USUARIO: {{usuarios_id}} <br>ID ROMPECABEZA: {{rompecabeza_id}} </p>
     </div>
     <div class="col-4 col-sm-1">
-        <a type="button" class="btn btn-default btn-danger" href='/partida/{{id_partida}}/edit'>editar</a>
+        <a type="button" class="btn btn-default btn-primary" href='/partida/{{id_partida}}/edit'>Editar</a>
       </div>
     <div class="col-4 col-sm-1">
       <form action='/partida/{{id_partida}}?_method=DELETE' method='post'>
-        <button type="submit" class="btn btn-default btn-danger">borrar</button>            
+        <button type="submit" class="btn btn-default btn-danger">Borrar</button>            
       </form>
     </div>
     <div class="col-6 col-sm-9"></div>
@@ -41,8 +42,5 @@
 {{/each}}
 <br><br>
     <div class="row pt-md-5"></div>
-    <div class="row">
-        <a href="/about" type="button" style="color:white;">Atrás</a>
-    </div>
   <br><br>
 
