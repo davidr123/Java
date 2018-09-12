@@ -25,14 +25,13 @@
         <div id="title">
             <img src="/images/rompecabezasTitle.png" class="img-fluid">
         </div>
-        {{#each objImagenes}}
         <div class="row" style="text-align: center">
-            <div class="col-md-12">
+        {{#each objImagenes}}
+            <div class="col-md-6">
                 <td> <a href="#"><img data-toggle="modal" data-target="#exampleModal" width="30%" onclick="demo({{id_imagen}},{{id_partida}})" src="{{descripcion}}" ></a></td>
-              
             </div>
-        </div>
         {{/each}}
+        </div>
         <br><br><br>
         <div class="row" style="text-align: center;">  
             <div class="col-12">
