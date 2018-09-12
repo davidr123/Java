@@ -17,6 +17,13 @@ body {
     margin-top: 33% ;
     color: black;
 }
+#content3F{
+    margin-top: 33% ;
+    color: black;
+    opacity: 0.4;
+    background-color: white;
+    width: 100%;
+}
 #contentImg{
     text-align: center;
 }
@@ -79,7 +86,6 @@ h2 {
 }
 h3 { 
     font-size: 1.8em; 
-    color: white; 
     margin: 1em 0.8em;
 }
 h4 { 
