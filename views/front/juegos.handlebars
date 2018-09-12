@@ -39,7 +39,7 @@
             <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Seleccione dificultad</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Escoge el número de piezas</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
@@ -47,15 +47,15 @@
                 <div class="modal-body">
                     <div class="row">
                         
-                        <button  onclick="seleccionatTamañoJuego(1)" class="restart-puzzle" data-grid="1">2x2</button>
-                        <button onclick="seleccionatTamañoJuego(2)" class="restart-puzzle" data-grid="2">3x3</button>
-                        <button onclick="seleccionatTamañoJuego(3)" class="restart-puzzle" data-grid="3">2x3</button>
-                        <button onclick="seleccionatTamañoJuego(4)" class="restart-puzzle" data-grid="4">2x4</button>
+                        <button  onclick="seleccionatTamañoJuego(1)" class="restart-puzzle" class="game-button" data-grid="1">4</button>
+                        <button onclick="seleccionatTamañoJuego(3)" class="restart-puzzle" data-grid="3">6</button>
+                        <button onclick="seleccionatTamañoJuego(4)" class="restart-puzzle" data-grid="4">8</button>
+                        <button onclick="seleccionatTamañoJuego(2)" class="restart-puzzle" data-grid="2">9</button>
                    
                             </div>
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-secondary game-button" data-dismiss="modal">Salir</button>
               </div>
 
             </div>
