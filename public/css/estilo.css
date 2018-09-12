@@ -14,8 +14,9 @@ body {
     margin-top: 10% ;
 }
 #content3{
-    margin-top: 33% ;
+    margin-top: 28%;
     color: black;
+    text-align: center;
 }
 #contentImg{
     text-align: center;
@@ -80,6 +81,7 @@ h2 {
 h3 { 
     font-size: 1.8em; 
     margin: 1em 0.8em;
+    color: burlywood;
 }
 h4 { 
     font: bold 1em sans-serif;
