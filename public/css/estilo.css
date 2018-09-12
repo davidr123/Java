@@ -18,11 +18,13 @@ body {
     color: black;
 }
 #content3F{
-    margin-top: 33% ;
+    margin-top: 33%;
     color: black;
     opacity: 0.4;
     background-color: white;
     width: 100%;
+    height: 35%;
+    z-index: 100;
 }
 #contentImg{
     text-align: center;
