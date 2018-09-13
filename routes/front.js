@@ -9,9 +9,11 @@ router.get('/', (req, res) => {
 });
 
 router.get('/avatar', (req, res) => {
-       
-      res.render('front/avatar');
-   
+     knex('Avatar')
+    .select()
+    .then(avatar =>{
+      res.render('front/avatar', { title: "Avatar", objAvatar: avatar });
+  });     
 });
 
 router.get('/avatarEscogido', (req, res) => {
