@@ -13,10 +13,10 @@
 </div>
 
 <div class="row">
-<a href="/user/new" type="button" class="btn btn-default btn-success">Nuevo</a>
+<a href="/user/new" type="button" class="btn btn-default btn-success">Nuevo</a> 
         <a href="/about" type="button" class="btn btn-default btn-warning">Atrás</a>
      <a href="/user/cerrar" type="button" class="btn btn-default btn-danger">Cerrar sesión</a>    
-</div>
+</div> <br><br>
 <div class="row pt-md-5"></div>
 
 {{#each objUsuarios}}
@@ -25,7 +25,7 @@
     <div class="col-4 col-sm-3">
         <p href='/user/{{id_administrador}}'> ID: {{id_administrador}} <br> USUARIO: {{usuario}} <br>PASSWORD: {{password}} </p>
     </div>
-    <div class="col-4 col-sm-1">
+    <div class="col-4 col-sm-2">
         <a href='/user/{{id_administrador}}/edit'><button class="btn btn-default btn-primary">Editar</button></a>
       </div>
     <div class="col-4 col-sm-1">
