@@ -17,11 +17,8 @@
 <!-- NOTA: utilice helper para simplificar el código de esta sección -->
 
 <h2>Single user page -  <a href="/user">Usuarios unitarios</a></h2>
-
+<div class="row pt-md-5"></div>
 {{user.id_administrador}}, {{user.usuario}}, {{user.password}}, {{user.rol}}
 
-
-<a href="/user/{{user.id_administrador}}/edit" type="button" class="btn btn-default btn-primary" >
-  Editar usuario
-</a>
-<a href ="/user"><button type="submit" class="btn btn-default btn-success" >Menú</button></a>
+<a href="/user/{{user.id_administrador}}/edit"><button type="submit" class="btn btn-default btn-primary">Editar Usuario</button></a> 
+<a href ="/user"><button type="submit" class="btn btn-default btn-success" > Ir al menú</button></a>
