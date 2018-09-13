@@ -27,10 +27,10 @@
 
 
 {{#each objUsuarios}}
-  <div class="row" id="table-design">
+  <div class="row">
       <br> <br>
     <div class="col-4 col-sm-3">
-        <p href='/partida/{{id_partida}}'> ID: {{id_partida}} <br> PUNTAJE: {{puntaje}} <br>PIEZAS: {{piezas}} <br>INTENTOS: {{intentos}} <br>ID USUARIO: {{usuarios_id}} <br>ID ROMPECABEZA: {{rompecabeza_id}} </p>
+        <p id="table-design" href='/partida/{{id_partida}}'> ID: {{id_partida}} <br> PUNTAJE: {{puntaje}} <br>PIEZAS: {{piezas}} <br>INTENTOS: {{intentos}} <br>ID USUARIO: {{usuarios_id}} <br>ID ROMPECABEZA: {{rompecabeza_id}} </p>
     </div>
     <div class="col-4 col-sm-2">
          <a href='/partida/{{id_partida}}/edit'><button class="btn btn-default btn-primary">Editar</button></a>
