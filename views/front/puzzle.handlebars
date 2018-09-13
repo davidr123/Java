@@ -23,7 +23,7 @@
                     <div id="pile" style="margin:10px">
                         <div id="puzzle_solved" style="display:none;text-align:center;position:relative;top:25%">
                             <h2 style="margin:0 0 20px; color:mediumvioletred; font-family: 'Dokdo', cursive; font-size: 45px;">Bien hecho!</h2>
-                            <a class="pure-button button-lg restart-puzzle btnRestart">Jugar de nuevo</a>
+                            <a class="pure-button button-lg restart-puzzle btnRestart" id="recargarJuego">Jugar de nuevo</a>
                         </div>
                     </div>
                 </div>
@@ -229,8 +229,16 @@ var intentos=0;
         });
     };
 }(jQuery));
-        
-        
+ 
+ 
+ /*Para recargar pantalla*/
+function recargarPantalla() {
+   console.log("Recargando...");
+  window.location="/front/puzzle"
+}
+recargarJuego.addEventListener('click', recargarPantalla);
+
+	
     </script>
          
     </body>
