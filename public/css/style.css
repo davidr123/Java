@@ -58,11 +58,11 @@ body {
 
 
 #table-design{
-    background-color: white;
-    opacity: 0.5;
-    margin: 2%;
-    z-index: -1;
-    border-radius: 25px;
+    background-color: ghostwhite;
+    border-radius: 7px;
+    padding: 3%;
+    text-align: center;
+    font-weight: 600;
 }
 
 .regresar{
