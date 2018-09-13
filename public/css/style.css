@@ -52,10 +52,16 @@ body {
     padding: 3%;    
 }
 
+#button-container{
+    margin: 3%;     
+}
+
+
 #table-design{
-    background-color: cyan;
-    border: solid 0;
-      
+    background-color: white;
+    opacity: 0.5;
+    text-align: center;
+    margin: 2%;
 }
 
 .regresar{
