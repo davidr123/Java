@@ -10,7 +10,7 @@
 <!-- NOTA: utilice helper para simplificar el código de esta sección -->
 
 <h2>Nuevo - <a href="/user"> Administrador </a></h2> 
-
+<div class="row pt-md-5"></div>
 <form class="form" action="/user/{{user.id_administrador}}" method="post">
   <div class="form-group">
     <label for="title"></label>
@@ -18,9 +18,8 @@
       <label> Contraseña</label><input type="password" class="form-control" id="password" name="password"  value="{{user.password}}">
   </div>
  <a><button type="submit" class="btn btn-default btn-primary">Registrar</button></a> 
-    <a href="/user"> <button class="btn btn-default btn-warning" style="color:white;">Atrás</button></a>
 </form>
-
+<a href="/user"> <button class="btn btn-default btn-warning" style="color:white;">Atrás</button></a>
 <br><br><br>
     <div class="row pt-md-5"></div>
     
