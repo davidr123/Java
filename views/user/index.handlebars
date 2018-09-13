@@ -23,10 +23,10 @@
   <div class="row" >
       <br> <br>
     <div class="col-4 col-sm-3">
-        <p href='/user/{{id_administrador}}'> ID: {{id_administrador}} <br> USUARIO: {{usuario}} <br>PASSWORD: {{password}} <br>ROL: {{rol}} </p>
+        <p href='/user/{{id_administrador}}'> ID: {{id_administrador}} <br> USUARIO: {{usuario}} <br>PASSWORD: {{password}} </p>
     </div>
     <div class="col-4 col-sm-1">
-        <a type="button" class="btn btn-default btn-primary" href='/user/{{id_administrador}}/edit'>Editar</a>
+        <a class="btn btn-default btn-danger" href='/user/{{id_administrador}}/edit'><button class="btn btn-default btn-primary">Editar</button></a>
       </div>
     <div class="col-4 col-sm-1">
       <form action='/user/{{id_administrador}}?_method=DELETE' method='post'>
