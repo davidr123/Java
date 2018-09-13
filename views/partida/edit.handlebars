@@ -7,11 +7,6 @@
               window.location="/user/login"
              //window.location="/user/login"
         }
-        
-      
-    
-
-
 </script>
 <h2>Editar - <a href="/partida"> Partida </a></h2>
 
@@ -21,8 +16,7 @@ agregar method-override
 
 <form class="form" action="/partida/{{user.id_partida}}?_method=PUT" method="post">
   <div class="form-group">
-    <label for="title"></label>      
-     <label>Puntaje</label> <input type="text" class="form-control" id="puntaje" name="puntaje" value="{{user.puntaje}}"> 
+    <label for="title"></label>     
       <label>Num. Piezas</label> <input type="text" class="form-control" id="piezas" name="piezas" value="{{user.piezas}}"> 
        <label>Num. intentos</label><input type="text" class="form-control" id="intentos" name="intentos" value="{{user.intentos}}"> 
       <label>Id usuario</label> <input type="text" class="form-control" id="usuarios_id" name="usuarios_id" value="{{user.usuarios_id}}"> 
