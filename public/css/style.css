@@ -52,6 +52,12 @@ body {
     padding: 3%;    
 }
 
+#table-design{
+    background-color: cyan;
+    border: solid 0;
+      
+}
+
 .regresar{
     position: relative;
     padding: 350px 0 250px 0;
