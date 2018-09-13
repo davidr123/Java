@@ -21,6 +21,7 @@
        <div class="col-2 col-sm-2">
               <a href="/about"> <button class="btn btn-default btn-warning" style="color:white;">Atrás</button></a>
        </div>
+</div>    
     
 <!--<div class="row pt-md-5"></div>-->
 
@@ -31,8 +32,8 @@
     <div class="col-4 col-sm-3">
         <p href='/partida/{{id_partida}}'> ID: {{id_partida}} <br> PUNTAJE: {{puntaje}} <br>PIEZAS: {{piezas}} <br>INTENTOS: {{intentos}} <br>ID USUARIO: {{usuarios_id}} <br>ID ROMPECABEZA: {{rompecabeza_id}} </p>
     </div>
-    <div class="col-4 col-sm-1">
-        <a type="button" class="btn btn-default btn-primary" href='/partida/{{id_partida}}/edit'>Editar</a>
+    <div class="col-4 col-sm-2">
+         <a href='/partida/{{id_partida}}/edit'><button class="btn btn-default btn-primary">Editar</button></a>
       </div>
     <div class="col-4 col-sm-1">
       <form action='/partida/{{id_partida}}?_method=DELETE' method='post'>
@@ -45,5 +46,6 @@
 <br><br>
     <div class="row pt-md-5"></div>
   <br><br>
+
 
 
