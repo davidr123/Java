@@ -1,9 +1,10 @@
 <script >
+       
         var usuario = localStorage.getItem("usuario");
         
-        if(usuario!=null || usuario!=undefined){
+        if(usuario==null || usuario==undefined){
              console.log(usuario);
-              window.location="/inicio"
+              window.location="/user/login"
              //window.location="/user/login"
         }
 </script>
