@@ -1,3 +1,13 @@
+<script >
+        var usuario = localStorage.getItem("usuario");
+        
+        if(usuario!=null || usuario!=undefined){
+             console.log(usuario);
+              window.location.href="/inicio"
+             //window.location="/user/login"
+        }
+</script>
+
 <div id="contentR">
     <h1> Administración </h1>                                       
     <img id="imgAdmin" src="/images/user.png" width="100px" alt="user img"> 
