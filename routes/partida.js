@@ -17,9 +17,14 @@ router.get('/', (req, res) => {
   });  
 });
 
-//routing new + form+ get
+//routing new + form+ get de partida
 router.get('/new', (req, res) => {
-  res.render('partida/new', { title: "Form Users" });
+    
+    knex('Administrador')
+    .select()
+    .then(usuarios =>{
+      res.render('partida/new', { title: "Usuarios", objUsuarios: usuarios });
+  });  
 });
 
 function respondAndRenderUser(id,res,viewName){  
