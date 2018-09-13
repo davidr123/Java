@@ -8,9 +8,6 @@
              //window.location="/user/login"
         }
         
-      
-    
-
 
 </script>
 <div class="row">
@@ -18,10 +15,15 @@
 </div>
 
 <div class="row">
-<a href="/partida/new" type="button" class="btn btn-default btn-success">Nuevo</a>
-<a href="/about" type="button" class="btn btn-default btn-warning">Atrás</a>    
-</div>
-<div class="row pt-md-5"></div>
+       <div class="col-2 col-sm-2">
+              <a href="/partida/new"> <button class="btn btn-default btn-success">Nuevo</button></a> 
+       </div>
+       <div class="col-2 col-sm-2">
+              <a href="/about"> <button class="btn btn-default btn-warning" style="color:white;">Atrás</button></a>
+       </div>
+    
+<!--<div class="row pt-md-5"></div>-->
+
 
 {{#each objUsuarios}}
   <div class="row">
@@ -43,4 +45,5 @@
 <br><br>
     <div class="row pt-md-5"></div>
   <br><br>
+
 
