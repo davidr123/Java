@@ -66,6 +66,16 @@ body {
     color: dimgray;
 }
 
+#title-design{
+    background-color: ghostwhite;
+    color: royalblue;
+    opacity: 0.90;
+    border-radius: 20px;
+    font-family: fantasy;
+      
+}
+
+
 .regresar{
     position: relative;
     padding: 350px 0 250px 0;
