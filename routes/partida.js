@@ -27,13 +27,17 @@ router.get('/new', (req, res) => {
   });  
 });
 
+
+
+
 function respondAndRenderUser(id,res,viewName){  
   if(typeof id != 'undefined'){
     knex('Partida')
       .select()
       .where('id_partida',id)
       .first()
-      .then(usuarios => {
+      .then(
+        usuarios => {
         res.render(viewName,{user: usuarios});
     });
   }else{
@@ -62,12 +66,12 @@ router.get('/:id_partida/edit', (req,res) => {
 
 
 function validUser(user){
-  return typeof user.puntaje == 'string';
+  return typeof user.url == 'string';
 }
 
 function validateUserInsertUpdateRedirect(req,res,callback){
   if(validUser(req.body)){
-   //inser into db
+     //inser into db
     const usuarios = {
     
       piezas : req.body.piezas,
@@ -86,7 +90,6 @@ function validateUserInsertUpdateRedirect(req,res,callback){
     });
   }
 }
-
 
 //routing new + form + post
 router.post('/', (req, res) => {  
@@ -147,4 +150,3 @@ router.delete('/:id_partida',(req,res)=>{
 
 
 module.exports = router;
-
