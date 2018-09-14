@@ -2,6 +2,9 @@
 <link rel="stylesheet" href="/css/bootstrap.min.css">
 <link rel="stylesheet" href="/css/estilo.css">    
 <body cz-shortcut-listes="true">
+<audio id="selectAudio">
+		<source src="/audio/seleccionar.mp3"> </source>
+</audio>
     <div id="title">
         <img src="/images/choose-avatar.png" class="img-fluid">
         </div>
@@ -32,7 +35,7 @@
    </div>
    
    <script>
-
+ document.getElementById('selectAudio').play();
  function demo(id_avatar){
         localStorage.setItem("id_avatar", id_avatar);
       //localStorage.setItem("foto", foto);
