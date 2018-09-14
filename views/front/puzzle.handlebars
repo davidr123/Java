@@ -12,9 +12,7 @@
         <link rel="stylesheet" href="/css/style.css">
     </head>
     <body class="juego" cz-shortcut-listes="true">
-<audio id="winAudio">
-  <source src="/public/audio/win.mp3" type="audio/mpeg" >
-</audio>
+<audio id="winAudio" src="/public/audio/win.mp3"> </audio>
 	<div id="title">
             <img src="/images/rompecabezasTitle.png" class="img-fluid">
         </div>
@@ -230,7 +228,7 @@ var intentos=0;
                                     //alert(piezas +" . "+intentos);
                                     if(intentos <= piezas){
                                        //alert("GAnastes ptos")
-				       
+				       	document.getElementById("#winAudio").play();
 					   //$("#winAudio").play();
 				       
                                         nuevopuntaje++;
