@@ -16,7 +16,8 @@ var partidas = require('./routes/partida.js');
 var front = require('./routes/front.js');
 
 
-var images = require('./routes/images.js');
+
+var avatar = require('./routes/avatar.js');
 
 var auth=require('./auth');
 
@@ -42,7 +43,7 @@ app.use(methodOverride('_method'));
 app.use('/',routes);
 app.use('/user',users);
 app.use('/partida',partidas);
-app.use('/images',images);
+app.use('/avatar',avatar);
 app.use('/auth', auth);
 app.use('/front', front);
 
