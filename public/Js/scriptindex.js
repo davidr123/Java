@@ -11,7 +11,7 @@ function updateImg(num){
    }
 }*/
 var aud = document.getElementById("myAudio");
-aud.volume = 0.5; // default 1 means 100%
+aud.volume = 0.3; // default 1 means 100%
 
 
 $("input").change(function(e) {
