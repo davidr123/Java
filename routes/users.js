@@ -133,8 +133,7 @@ function validateUserInsertUpdateRedirect(req,res,callback){
      //inser into db
     const usuarios = {
       usuario : req.body.usuario,
-      password : req.body.password,
-      rol : req.body.rol        
+      password : req.body.password
     };    
     callback(usuarios);
     console.log("created");
@@ -154,8 +153,7 @@ router.post('/', (req, res) => {
     knex('Administrador')
       .returning('id_administrador')
       .insert({usuario : req.body.usuario,
-      password : req.body.password,
-      rol : req.body.rol  })
+      password : req.body.password  })
       .then(ids =>  {
         const id = ids[0];
         res.redirect(`/user/${id}`);
@@ -169,8 +167,7 @@ router.put('/:id_administrador',(req,res) => {
     knex('Administrador')
       .where('id_administrador',req.params.id_administrador)
       .update({usuario : req.body.usuario,
-      password : req.body.password,
-      rol : req.body.rol   })
+      password : req.body.password   })
       .then( () =>  {
         res.redirect(`/user/${req.params.id_administrador}`);
       });
