@@ -13,6 +13,9 @@
     
     
 <body cz-shortcut-listes="true">
+<audio id="clicAudio">
+		<source src="/audio/clic.mp3"> </source>
+</audio>
         <div id="title">
         <img src="/images/rompecabezasTitle.png" class="img-fluid">
         </div>
@@ -39,4 +42,14 @@
             
 <script src="/Js/jquery-3.3.1.min.js" type="text/javascript"></script>
 <script src="/Js/scriptindex.js"></script>  
+
+ <script>
+ 
+ 
+ $('#game-button').on("click", function(){ 
+    document.getElementById('clicAudio').play();
+ } );
+ 
+ </script>
+
 </body>
