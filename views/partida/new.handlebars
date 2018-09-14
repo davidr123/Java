@@ -15,13 +15,39 @@
 
     <form class="form" action="/partida" method="post">
       <div class="form-group">
+      <script src="/Js/jquery-3.3.1.min.js"> </script>    
         <label for="title"></label>
-        <label>Piezas:</label><input type="text" class="form-control" id="piezas" name="piezas" placeholder="Ingrese número de piezas"> 
-          <label>Intentos:</label><input type="text" class="form-control" id="intentos" name="intentos" placeholder="enter a number of tries"> 
-          <label>Id Usuario:</label><input type="text" class="form-control" id="usuarios_id" name="usuarios_id" placeholder=" id usuario"> 
-          <label>Id rompecabeza:</label><input type="text" class="form-control" id="rompecabeza_id" name="rompecabeza_id" placeholder="enter id rompecabeza"> 
-        </div>
+        <label>Piezas:</label><select type="text" class="form-control" id="piezas" name="piezas"  >
+        <option > 4</option>
+        <option > 8</option>
+        <option > 6</option>
+        <option > 9</option>
+       <option > 10</option>
+      </select>
+          <label>Id Usuario:</label><select  type="text" class="form-control" id="usuarios_id" name="usuarios_id" placeholder=" id usuario">
+         {{#each objUsuarios}}
+      <option value="{{id_administrador}}">{{usuario}} </option>
+      
+       {{/each}}
+      </select>
+         <label for="title"></label>
+      <div>
+      <label>Subir Imagen</label>
+      </div>
+   
 
+      <div class ="form-group" id="imagen">
+    
+<input type="file" class="form-control" required id="url" >
+          
+          <input type="text"  name="url" style="visibility:hidden" id="urlimage">
+          
+          
+<!--
+     <input type="text"  name="id_partida"   placeholder="id_partida">
+   
+-->
+       
 
         <div class="row pt-md-2"></div>
      <a><button type="submit" class="btn btn-default btn-primary">Registrar</button></a> 
@@ -30,3 +56,43 @@
     <a href="/partida"> <button class="btn btn-default btn-warning" style="color:white;">Atrás</button></a>
     <br><br><br>
         <div class="row pt-md-5"></div>
+        
+        
+        
+  <script>
+try{ 
+    document.addEventListener('DOMContentLoaded',function(){
+    document.querySelector('#url').onchange=evento;
+      },false);
+      
+      function evento(event){
+        readURL(this, "urlimage");
+      }
+      
+      function readURL(input, id) {
+
+          if (input.files && input.files[0]) {
+              var reader = new FileReader();
+                console.log("Hola");
+              reader.onload = function (e) {
+                  console.log(e.target.result);
+                  
+                  $('#'+id).attr('value', e.target.result);
+              }
+
+              reader.readAsDataURL(input.files[0]);
+          }
+      }
+    }catch(err){
+
+    }
+</script>
+
+
+
+
+
+
+
+
+
