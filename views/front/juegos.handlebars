@@ -21,11 +21,15 @@
             <img src="/images/rompecabezasTitle.png" class="img-fluid">
         </div>
         <div class="row" style="text-align: center">
-            <div class="col-md-11">
             {{#each objImagenes}}
-                <td> <a href="#"><img data-toggle="modal" data-target="#exampleModal" width="30%" onclick="demo({{id_imagen}},{{id_partida}})" src="{{descripcion}}" ></a></td>
-            {{/each}}
+        
+            <div class="col-md-6">
+                <!-- <td> <a href="#"><img data-toggle="modal" data-target="#exampleModal" width="70%" onclick="demo({{id_partida}})" src="{{imagen}}" ></a></td>
+              -->
+           <td> <a href="#"><img data-toggle="modal" width="70%" onclick="demo({{id_partida}},{{piezas}})" src="{{imagen}}" ></a></td>
+
             </div>
+        {{/each}}
         </div>
         <br><br><br>
         <div class="row" style="text-align: center;">  
@@ -65,9 +69,11 @@
         </div>
         
         <script>
-    function demo(id, partida){
-        localStorage.setItem("foto", id);
-        localStorage.setItem("partida", partida);
+    function demo(id_partida, piezas){
+      
+        localStorage.setItem("id_partida", id_partida);
+         localStorage.setItem("piezas", piezas);
+         window.location.href = '/front/puzzle/'+id_partida;
     }
 
     function seleccionatTamañoJuego(variable){
@@ -85,7 +91,7 @@
                // console.log(data)
           //  });
             
-        let id=localStorage.getItem("foto");
+        let id=localStorage.getItem("id_partida");
        
         
              
