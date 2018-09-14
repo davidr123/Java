@@ -7,19 +7,18 @@
               window.location="/user/login"
              //window.location="/user/login"
         }
-        
-      
-    
-
-
 </script>
 <div class="row">
-<h1> Tabla Avatar </h1>
+<h1 id="title-design"> Tabla Avatar </h1>
 </div>
-
-<div class="row">
-<a href="/avatar/new" type="button" class="btn btn-default btn-success">Nuevo</a>
-    <a href="/about" type="button" class="btn btn-default btn-warning">Atrás</a>
+<div class="row pt-md-5"></div>
+<div class="row" id="button-container">
+       <div class="col-2 col-sm-2">
+              <a href="/avatar/new"> <button class="btn btn-default btn-success">Nuevo</button></a> 
+       </div>
+    <div class="col-2 col-sm-2">
+              <a href="/about"> <button class="btn btn-default btn-warning" style="color:white;">Atrás</button></a>
+       </div>
 </div>
 <div class="row pt-md-5"></div>
 
@@ -27,10 +26,10 @@
   <div class="row">
       <br> <br>
     <div class="col-4 col-sm-3">
-        <p href='/avatar/{{id_avatar}}'> ID: {{id_avatar}} <br>PUNTAJE: {{puntaje}} <br> FOTO: {{foto}}  </p>
+        <p id="table-design" href='/avatar/{{id_avatar}}'> ID: {{id_avatar}} <br>PUNTAJE: {{puntaje}} <br> FOTO: {{foto}}  </p>
     </div>
-    <div class="col-4 col-sm-1">
-        <a type="button" class="btn btn-default btn-primary" href='/avatar/{{id_avatar}}/edit'>Editar</a>
+    <div class="col-4 col-sm-2">
+        <a href='/avatar/{{id_avatar}}/edit'><button class="btn btn-default btn-primary">Editar</button></a>
       </div>
     <div class="col-4 col-sm-1">
       <form action='/avatar/{{id_avatar}}?_method=DELETE' method='post'>
