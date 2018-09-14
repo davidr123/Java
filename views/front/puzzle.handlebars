@@ -16,14 +16,14 @@
 	<div id="title">
             <img src="/images/rompecabezasTitle.png" class="img-fluid">
         </div>
-        Movimientos: <p id="intentos">0</p>
+        Movimientos: <p id="intentos" style="color:white; font-family: 'Gaegu', cursive;">0</p>
         <div id="puzzle-containment" style="margin:30px 0;padding:10px;text-align:center">
             <div class="pure-g" style="max-width:1280px;margin:auto">
                 <div class="pure-u-1 pure-u-md-1-2">
                     <div id="pile" style="margin:10px">
                         <div id="puzzle_solved" style="display:none;text-align:center;position:relative;top:25%">
-                            <h2 style="margin:0 0 20px; color:mediumvioletred; font-family: 'Dokdo', cursive; font-size: 45px;">Bien hecho!</h2>
-                            <a class="pure-button button-lg btnRestart" onclick="recargar()">Jugar de nuevo</a>
+                            <h2 style="margin:0 0 20px; color:lightcyan; font-family: 'Gaegu', cursive; font-size: 45px;">Bien hecho!</h2>
+                            <a class="pure-button button-lg btnRestart" onclick="recargar()" style="background-color:#FFC300" >Jugar de nuevo</a>
                         </div>
                     </div>
                 </div>
@@ -34,11 +34,16 @@
                 </div>
             </div>
         </div>
-        <div id="atrasBtn">
-            <div class="game-button">
-                <a href="/front/juegos"> <img src="/images/regresar.png" width="165px"> </a>
-            </div>
-        </div>
+	
+         <div class="col-md-12">
+     <a href="/front/juegos"><button id="arrows">
+            <img src="/images/back-button.png" class="img-fluid" ></button>
+            </a>
+         </div>    
+	
+	
+	
+	
         <div id="puzzle-points">
             <div id="puntaje">
                 
