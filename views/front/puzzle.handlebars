@@ -228,13 +228,12 @@ var intentos=0;
                                     //alert(piezas +" . "+intentos);
                                     if(intentos <= piezas){
                                        //alert("GAnastes ptos")
-				       	document.getElementById("#winAudio").play();
-					   //$("#winAudio").play();
+				       	//$("#winAudio").play();
 				       
                                         nuevopuntaje++;
                                         $("#puntaje").html("<p>"+nuevopuntaje+"</p>");
                                         //localStorage.setItem("puntaje", nuevopuntaje);
-                                        
+                                        document.getElementById("#winAudio").play();
                                     }
                                     let url = window.origin;
                                      o.onComplete(that);
