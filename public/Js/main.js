@@ -87,31 +87,39 @@ function start_puzzle(x,y){
 }
 
 $(function(){
+    
     var piezas=localStorage.getItem("piezas");
     //alert(piezas);
     var x;
     var y;
     switch(piezas){
-            case '1':
+            case '4':
                 x=2;
             y=2;
             localStorage.setItem("numpiezas",4);
             break;
-            case '2':
-                x=3;
-            y=3;
-            localStorage.setItem("numpiezas",9);
-            break;
-            case '3':
-                x=2;
-            y=3;
-            localStorage.setItem("numpiezas",6);
-            break;
-            case '4':
+            case '8':
                 x=2;
             y=4;
             localStorage.setItem("numpiezas",8);
             break;
+            case '6':
+                x=2;
+            y=3;
+            localStorage.setItem("numpiezas",6);
+            break;
+            case '9':
+                x=3;
+            y=3;
+            localStorage.setItem("numpiezas",9);
+            break;
+            
+             case '10':
+                x=2;
+            y=5;
+            localStorage.setItem("numpiezas",10);
+            break;
+            
                  }
     
     $('#pile').height($('#source_image').height());
@@ -151,3 +159,4 @@ var contadorErrores = 0;
     });
 
 */
+
