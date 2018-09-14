@@ -99,6 +99,7 @@ router.get('/', (req, res) => {
     
   });
 router.post('/puntajeavatar/:id', (req, res) => {
+  const id = req.params.id;
   knex('Avatar')
     .select()
     .where('id_avatar',id)
