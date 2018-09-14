@@ -177,7 +177,7 @@ router.post('/', (req, res) => {
       console.log("entro");
     knex('Avatar')
       .returning('id_avatar')
-      .insert({foto : req.body.url}, {puntaje : 0})
+      .insert({foto : req.body.url, puntaje : req.body.puntaje})
       .then(ids =>  {
         const id = ids[0];
         res.redirect(`/avatar/${id}`);
