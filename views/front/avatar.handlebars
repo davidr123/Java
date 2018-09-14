@@ -5,6 +5,9 @@
 <audio id="selectAudio">
 		<source src="/audio/seleccionar.mp3"> </source>
 </audio>
+<audio id="clicAudio">
+		<source src="/audio/clic.mp3"> </source>
+</audio>
     <div id="title">
         <img src="/images/choose-avatar.png" class="img-fluid">
         </div>
@@ -35,6 +38,10 @@
    </div>
    
    <script>
+    $('#arrows').on("click", function(){ 
+    document.getElementById('clicAudio').play();
+ } );
+   
  document.getElementById('selectAudio').play();
  function demo(id_avatar){
         localStorage.setItem("id_avatar", id_avatar);
