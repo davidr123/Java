@@ -67,13 +67,13 @@ function validUser(user){
 
 function validateUserInsertUpdateRedirect(req,res,callback){
   if(validUser(req.body)){
-     //inser into db
+   //inser into db
     const usuarios = {
-      puntaje : req.body.puntaje,
+    
       piezas : req.body.piezas,
-      intentos : req.body.intentos,
+  imagen:req.body.url,
       usuarios_id : req.body.usuarios_id,
-      rompecabeza_id : req.body.rompecabeza_id       
+        
     };    
     callback(usuarios);
     console.log("created");
@@ -87,16 +87,17 @@ function validateUserInsertUpdateRedirect(req,res,callback){
   }
 }
 
+
 //routing new + form + post
 router.post('/', (req, res) => {  
   validateUserInsertUpdateRedirect(req,res,(user) => { 
     knex('Partida')
       .returning('id_partida')
-      .insert({ puntaje : req.body.puntaje,
+      .insert({
       piezas : req.body.piezas,
-      intentos : req.body.intentos,
+      imagen:req.body.url,
       usuarios_id : req.body.usuarios_id,
-      rompecabeza_id : req.body.rompecabeza_id })
+  })
       .then(ids =>  {
         const id = ids[0];
         res.redirect(`/partida/${id}`);
@@ -109,11 +110,11 @@ router.put('/:id_partida',(req,res) => {
   validateUserInsertUpdateRedirect(req,res,(user) => {
     knex('Partida')
       .where('id_partida',req.params.id_partida)
-      .update({puntaje : req.body.puntaje,
+      .update({
       piezas : req.body.piezas,
-      intentos : req.body.intentos,
-      usuarios_id : req.body.usuarios_id,
-      rompecabeza_id : req.body.rompecabeza_id
+
+               imagen:req.body.url
+               
               })
       .then( () =>  {
         res.redirect(`/partida/${req.params.id_partida}`);
@@ -146,3 +147,4 @@ router.delete('/:id_partida',(req,res)=>{
 
 
 module.exports = router;
+
