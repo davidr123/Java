@@ -85,6 +85,29 @@ router.get('/', (req, res) => {
   });  
 });
 
+
+ router.post('/puntajeguardar/:id', function(req, res){
+     console.log("Entro al post");
+    const id = req.params.id;
+
+    knex('Avatar')
+    .increment('puntaje', 1)
+     .where('id_avatar', id)
+     .then( avatar => {
+      res.json({user: avatar});
+    });
+    
+  });
+router.post('/puntajeavatar/:id', (req, res) => {
+  knex('Avatar')
+    .select()
+    .where('id_avatar',id)
+      .first()
+    .then(avatar =>{
+      res.json({avatar: avatar});
+  });  
+});
+
 //routing new + form+ get
 router.get('/new', (req, res) => {
   res.render('avatar/new', { title: "Form Users" });
