@@ -12,7 +12,7 @@
         <link rel="stylesheet" href="/css/style.css">
     </head>
     <body class="juego" cz-shortcut-listes="true">
-<audio id="winAudio" src="/public/audio/win.mp3"> </audio>
+<audio id="winAudio"> <source src="/public/audio/win.mp3" type="audio/mp3"> </audio>
 	<div id="title">
             <img src="/images/rompecabezasTitle.png" class="img-fluid">
         </div>
@@ -222,7 +222,7 @@ var intentos=0;
                                 $(this).droppable('disable').css('opacity', 1).fadeOut(1000);
                                 ui.draggable.css({opacity: 0, cursor: 'default'}).draggable('disable');
                                 if ($('.snappuzzle-piece.correct.'+puzzle_class).length == o.rows*o.columns) {
-                                    
+                                    document.getElementById("#winAudio").play();
                                     var piezas=parseInt(localStorage.getItem("numpiezas"));
                                     piezas=piezas+4;
                                     //alert(piezas +" . "+intentos);
@@ -233,7 +233,7 @@ var intentos=0;
                                         nuevopuntaje++;
                                         $("#puntaje").html("<p>"+nuevopuntaje+"</p>");
                                         //localStorage.setItem("puntaje", nuevopuntaje);
-                                        document.getElementById("#winAudio").play();
+					
                                     }
                                     let url = window.origin;
                                      o.onComplete(that);
