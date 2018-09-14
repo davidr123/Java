@@ -224,13 +224,13 @@ var intentos=0;
                                 $(this).droppable('disable').css('opacity', 1).fadeOut(1000);
                                 ui.draggable.css({opacity: 0, cursor: 'default'}).draggable('disable');
                                 if ($('.snappuzzle-piece.correct.'+puzzle_class).length == o.rows*o.columns) {
-                                  //  document.getElementById("#winAudio").play();
+                                    document.getElementById('winAudio').play();
                                     var piezas=parseInt(localStorage.getItem("numpiezas"));
                                     piezas=piezas+4;
                                     //alert(piezas +" . "+intentos);
                                     if(intentos <= piezas){
                                        //alert("GAnastes ptos")
-				       	$("#winAudio").play();
+				       //	$("#winAudio").play();
 				       console.log("Ganaste");
                                         nuevopuntaje++;
                                         $("#puntaje").html("<p>"+nuevopuntaje+"</p>");
