@@ -23,7 +23,7 @@ router.get('/avatarEscogido', (req, res) => {
 });
 
 router.get('/juegos', (req, res) => {
-       knex('Imagenes')
+       knex('Partida')
     .select()
     .then(imagenes =>{
       res.render('front/juegos', { title: "Imagenes", objImagenes: imagenes });
@@ -35,13 +35,13 @@ router.get('/juegos', (req, res) => {
 function respondAndRenderUser(id,res,viewName){  
   if(typeof id != 'undefined'){
       console.log("respon");
-    knex('Imagenes')
+    knex('Partida')
       .select()
-      .where('id_imagen',id)
+      .where('id_partida',id)
       .first()
-      .then(imagenes => {
+      .then(partida => {
         
-        res.render(viewName,{imagenes: imagenes});
+        res.render(viewName,{imagenes: partida});
     });
   }else{
     
@@ -54,6 +54,7 @@ function respondAndRenderUser(id,res,viewName){
 }
 
 //puntos
+
 
   router.get('/puntos/:id', function(req, res){
 
