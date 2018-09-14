@@ -108,6 +108,7 @@ router.post('/puntajeavatar/:id', (req, res) => {
   });  
 });
 
+
 //routing new + form+ get
 router.get('/new', (req, res) => {
   res.render('avatar/new', { title: "Form Users" });
@@ -190,7 +191,10 @@ router.put('/:id_avatar',(req,res) => {
       console.log(req.body.url);
     knex('Avatar')
       .where('id_avatar',req.params.id_avatar)
-      .update({foto : req.body.url})
+      .update({foto : req.body.url,
+              
+      })
+      
     
       .then( () =>  {
         res.redirect(`/avatar/${req.params.id_avatar}`);
