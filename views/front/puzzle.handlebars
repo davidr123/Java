@@ -12,7 +12,7 @@
         <link rel="stylesheet" href="/css/style.css">
     </head>
     <body class="juego" cz-shortcut-listes="true">
-<audio id="winAudio" autoplay>
+<audio id="winAudio">
   <source src="/audio/win.mp3" type="audio/mpeg" >
 </audio>
 	<div id="title">
@@ -231,8 +231,9 @@ var intentos=0;
                                     if(intentos <= piezas){
                                        //alert("GAnastes ptos")
 				       
-				        var aud = document.getElementById("winAudio");
-					aud.volume = 0.5; // default 1 means 100%
+				        $(document).ready(function () {
+    $("#winAudio").play();
+});
 				       
                                         nuevopuntaje++;
                                         $("#puntaje").html("<p>"+nuevopuntaje+"</p>");
