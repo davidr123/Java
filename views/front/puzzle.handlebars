@@ -23,13 +23,13 @@
                     <div id="pile" style="margin:10px">
                         <div id="puzzle_solved" style="display:none;text-align:center;position:relative;top:25%">
                             <h2 style="margin:0 0 20px; color:mediumvioletred; font-family: 'Dokdo', cursive; font-size: 45px;">Bien hecho!</h2>
-                            <a class="pure-button button-lg restart-puzzle btnRestart" id="recargarJuego">Jugar de nuevo</a>
+                            <a class="pure-button button-lg btnRestart" onclick="recargar()">Jugar de nuevo</a>
                         </div>
                     </div>
                 </div>
                 <div class="pure-u-1 pure-u-md-1-2">
                     <div style="margin:10px">
-                        <img id="source_image" class="pure-img" src="{{imagenes.descripcion}}">
+                        <img id="source_image" class="pure-img" src="{{imagenes.imagen}}">
                     </div>
                 </div>
             </div>
@@ -59,10 +59,13 @@
 
             console.log(data)
 
-            $("#puntaje").html("<p>"+data.user.puntaje+"</p>");
+            //$("#puntaje").html("<p>"+data.user.puntaje+"</p>");
 
         });
 
+	function recargar(){
+	    location.reload(true);
+	}
     </script>
     <script>
         
@@ -77,6 +80,17 @@
 
 
 (function($){
+let url = window.origin;
+    console.log(localStorage.getItem("id_avatar"));
+    $.post( url+"/avatar/puntajeavatar/"+localStorage.getItem("id_avatar"), function( data ) {
+        localStorage.setItem("puntaje",data.avatar.puntaje);
+             // nuevopuntaje=data.avatar.puntaje;
+        //console.log(data.avatar.puntaje);
+         //alert(nuevopuntaje);
+           });
+    var nuevopuntaje=localStorage.getItem("puntaje");
+  //  alert(nuevopuntaje);
+     $("#puntaje").html("<p>"+nuevopuntaje+"</p>");
 var intentos=0;
     
     $.fn.snapPuzzle = function(options){
@@ -199,20 +213,24 @@ var intentos=0;
                                 $(this).droppable('disable').css('opacity', 1).fadeOut(1000);
                                 ui.draggable.css({opacity: 0, cursor: 'default'}).draggable('disable');
                                 if ($('.snappuzzle-piece.correct.'+puzzle_class).length == o.rows*o.columns) {
-                                    alert("Ganaste");
+                                    
                                     var piezas=parseInt(localStorage.getItem("numpiezas"));
                                     piezas=piezas+4;
-                                    console.log(piezas +" . "+intentos);
+                                    //alert(piezas +" . "+intentos);
                                     if(intentos <= piezas){
-                                        console.log("Ganaste puntos!")
+                                       //alert("GAnastes ptos")
+                                        nuevopuntaje++;
+                                        $("#puntaje").html("<p>"+nuevopuntaje+"</p>");
+                                        //localStorage.setItem("puntaje", nuevopuntaje);
+                                        
                                     }
                                     let url = window.origin;
                                      o.onComplete(that);
-                                        $.post( url+"/front/puntos/"+localStorage.getItem("partida"), function( data ) {
-                                            console.log( url+"/front/puntos/"+localStorage.getItem("partida"))
+                                        $.post( url+"/avatar/puntajeguardar/"+localStorage.getItem("id_avatar"), function( data ) {
+                                            //console.log( url+"/front/puntos/"+localStorage.getItem("partida"))
                                             //console.log(data)
                                             //$("#puntaje").html("<p>"+data.user.puntaje+"</p>");
-                                
+                                //alert("Guardo");
                                         });
                                     
                                 }
@@ -229,16 +247,8 @@ var intentos=0;
         });
     };
 }(jQuery));
- 
- 
- /*Para recargar pantalla*/
-function recargarPantalla() {
-   console.log("Recargando...");
-   location.reload();
-}
-recargarJuego.addEventListener('click', recargarPantalla);
+        
 
-	
     </script>
          
     </body>
